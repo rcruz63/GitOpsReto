@@ -1,6 +1,6 @@
 // Pipeline "Hello World!"
 
-pipepline {
+pipeline {
 
   agent any
 
