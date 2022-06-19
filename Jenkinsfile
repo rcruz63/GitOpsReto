@@ -29,6 +29,7 @@ pipeline {
             steps {
                 echo "sh terraform apply"
             }
+        }
     }
 }
 
