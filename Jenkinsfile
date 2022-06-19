@@ -5,11 +5,30 @@ pipeline {
   agent any
 
     stages {
-        stage("Hello World!") {
+        stage("always") {
             steps {
-                echo "Hello World!"
+                echo "sh terraform plan"
             }
         }
+
+        // stage "test"
+        stage("test") {
+            when {
+                branch 'PR-*'
+            }
+            steps {
+                echo "test"
+            }
+        }
+
+        // stage "master" terraform apply
+        stage("master") {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo "sh terraform apply"
+            }
     }
 }
 
